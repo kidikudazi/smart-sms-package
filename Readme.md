@@ -1,6 +1,7 @@
 # A Simple Smart Sms Api @kidikudazi/smart-sms
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kidikudazi/smart-sms.svg)](https://www.npmjs.com/package/@kidikudazi/smart-sms)
+[![npm (scoped)](https://img.shields.io/badge/npm-@kidikudazi/smart--sms-brightgreen.svg)](https://www.npmjs.com/package/@kidikudazi/smart-sms)
 ```
 # A basic sms api for smart sms solutions api.
 
