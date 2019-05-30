@@ -1,0 +1,12 @@
+{
+  "name": "@kidikudazi/smart-sms",
+  "version": "1.0.0",
+  "description": "A simple sms package",
+  "main": "index.js",
+  "keywords": [
+    "sms",
+    "sms-api"
+  ],
+  "author": "Francis Adeboye",
+  "license": "MIT"
+}
