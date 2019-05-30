@@ -1,12 +1,17 @@
 {
   "name": "@kidikudazi/smart-sms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple sms package",
   "main": "index.js",
   "keywords": [
     "sms",
+    "smart-sms",
     "sms-api"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kidikudazi/smart-sms-package"
+  },
   "author": "Francis Adeboye",
   "license": "MIT"
 }
