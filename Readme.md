@@ -17,8 +17,10 @@
 
 # Usage with Node.js And Express
 ```js
+// require request package
+var request = require('request');
 // require the package
-var {sendSms} = require('@kidikudazi/smart-sms');
+var {sendSms} = require('@kidikudazi/smart-sms')(request);
 var express = require('express');
 var app = express();
 

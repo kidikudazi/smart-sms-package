@@ -1,6 +1,6 @@
 {
   "name": "@kidikudazi/smart-sms",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple sms package",
   "main": "index.js",
   "keywords": [
