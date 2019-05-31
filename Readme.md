@@ -22,10 +22,11 @@
 // require request package
 var request = require('request');
 // require the package
-var {sendSms} = require('@kidikudazi/smart-sms')(request);
+var {sendSms, smsBalance} = require('@kidikudazi/smart-sms')(request);
 var express = require('express');
 var app = express();
 
+// send message
 app.post('/send_message', (req,res)=>{
 
 	var smsOptions = {
@@ -41,7 +42,20 @@ app.post('/send_message', (req,res)=>{
 		if(err)throw err;
 		console.log(response);
 	});
-})
+});
+
+// get sms unit balance
+app.get('/sms_unit_balance', (req, res)=>{
+	var Credentials = {
+		username: process.env.SMART_SMS_USERNAME,
+		password: process.env.SMART_SMS_PASSWORD
+	}
+
+	smsBalance(Credentials, (error, response)=>{
+		if(error)throw error;
+		console.log('Sms Unit Balance ', response);
+	});
+});
 ```
-# Get Smart Sms Credentials
- [SmartSmsSolutions](https://smartsmssolutions.com)
+# Create Smart Sms Credentials
+  [SmartSmsSolutions](https://smartsmssolutions.com)

@@ -15,7 +15,23 @@ const smsApi = (request) =>{
 
 		request.post(options, callback);
 	}
-	return {sendSms};
+
+	const smsBalance = (credentials, mycallback)=>{
+		const options = {
+			url:`http://api.smartsmssolutions.com/smsapi.php?username=${credentials.username}&password=${credentials.password}&balance=true`,
+			headers : {
+				'content-type' : 'application/json',
+				'cache-control' : 'no-cache'
+			}
+		}
+
+		const callback = (error, response, body)=>{
+			return mycallback(error, body);
+		}
+
+		request(options, callback);
+	}
+	return {sendSms, smsBalance};
 }
 
 module.exports = smsApi;
