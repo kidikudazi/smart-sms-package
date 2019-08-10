@@ -57,5 +57,56 @@ app.get('/sms_unit_balance', (req, res)=>{
 	});
 });
 ```
+# Sending sms with api token
+```js
+// require request package
+var request = require('request');
+// require the package
+var {sendTokenSms} = require('@kidikudazi/smart-sms')(request);
+var express = require('express');
+var app = express();
+
+// send message
+app.post('/send_message', (req,res)=>{
+	// set sms options
+	var smsOptions = {
+		'sender': 'Sender Id',
+		'to' : 'recipient phone number',
+		'message': 'Your Message',
+		'type':'0',
+		'routing': 3,
+		'token':process.env.SMART_SMS_TOKEN
+	}
+
+	// call the send sms instance
+	sendTokenSms(smsOptions, (err, response)=>{
+		if(err)throw err;
+		console.log(response);
+	});
+});
+
+```
+
+# Check SMS Unit Balance With Token
+```js
+// require request package
+var request = require('request');
+// require the package
+var {checkUnitBalance} = require('@kidikudazi/smart-sms')(request);
+var express = require('express');
+var app = express();
+
+// get sms unit balance
+app.get('/sms_unit_balance', (req, res)=>{
+	// get smart sms token
+	var SMS_Token = process.env.SMART_SMS_TOKEN;
+
+	checkUnitBalance(SMS_Token, (error, response)=>{
+		if(error) throw error;
+		console.log(response);
+	});
+});
+
+```
 # Create Smart Sms Credentials
   [SmartSmsSolutions](https://smartsmssolutions.com)
